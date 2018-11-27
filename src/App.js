@@ -69,7 +69,8 @@ class App extends Component {
     this.setState(
       {
         secretWord: newSecretWord,
-        secretWordLetters: newSecretWord.split('')
+        secretWordLetters: newSecretWord.split(''),
+        correctLetters: ['_', '_', '_', '_', '_', '_', '_']
       },
       () => {
         this.generateRandomLetters()
@@ -150,24 +151,34 @@ class App extends Component {
     // compare the letter to the secretwordsletter array
     //want to slice the matching letter and keep index position
 
-    if (this.state.secretWordLetters.includes(event.target.value)) {
+    while (this.state.secretWordLetters.includes(event.target.value)) {
+      // this find the index position of the matched letter
       let matchedLetterIndex = this.state.secretWordLetters.indexOf(
         event.target.value
       )
+
+      // this takes the index and puts the target value in the new array
+      // in the same index position
       this.state.correctLetters.splice(
         matchedLetterIndex,
         1,
         event.target.value
       )
       //
-      // to make this work right i need a for loop that takes the index +1
-      // then goes back through the secret word up until the length of the
-      // secret word array
+      // this gem right here was holding me back a while
+      // replaces the letter with a empty string so my while loop will
+      // check and add all the same letters
+      this.state.secretWordLetters[matchedLetterIndex] = ''
+      console.log(this.state.secretWordLetters)
 
       this.setState({
         correctLetters: this.state.correctLetters
       })
     }
+
+    // to make this work right i need a for loop that takes the index +1
+    // then goes back through the secret word up until the length of the
+    // secret word array
   }
 
   won = () => {
