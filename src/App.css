@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  text-transform: uppercase;
 }
 
 .App-logo {
@@ -29,4 +30,44 @@
   to {
     transform: rotate(360deg);
   }
+}
+h4 {
+  margin: 1px;
+}
+.snowmanImage {
+  width: 45vw;
+}
+header {
+  font-size: 15vw;
+}
+button.newGame {
+  font-size: 4vw;
+  margin: 0.8vw;
+  width: 25vw;
+  height: 7vw;
+  text-transform: uppercase;
+}
+.correctLetters {
+  color: red;
+  margin: 1.5vw;
+  font-size: 10vw;
+}
+section {
+  display: flex;
+  justify-content: center;
+}
+button {
+  margin: 0.3vw;
+  width: 7vw;
+  height: 7vw;
+  font-size: 4.1vw;
+  border-radius: 2vw;
+  text-transform: uppercase;
+}
+button:hover {
+  box-shadow: 0 0 1vw red;
+}
+
+span {
+  font-size: 5vw;
 }
