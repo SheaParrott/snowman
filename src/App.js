@@ -14,7 +14,8 @@ class App extends Component {
     super(props)
 
     this.state = {
-      snowman: snowman_7,
+      snowman: snowman_0,
+      snowmanArray: [],
       secretWord: '',
       secretWordLetters: ['_', '_', '_', '_', '_', '_', '_'],
       correctLetters: ['_', '_', '_', '_', '_', '_', '_'],
@@ -59,23 +60,47 @@ class App extends Component {
   //
   //
 
-  generateRandomWord = event => {
+  newGame = event => {
     // create a function that breaks apart the random word into
     // an array of letters
     //   - need to turn an string or object into an array
     //   - then slice each character
     // display for now or console log
     const newSecretWord = 'snowman'
-    this.setState(
-      {
-        secretWord: newSecretWord,
-        secretWordLetters: newSecretWord.split(''),
-        correctLetters: ['_', '_', '_', '_', '_', '_', '_']
-      },
-      () => {
-        this.generateRandomLetters()
-      }
-    )
+    this.setState({
+      snowman: snowman_0,
+      secretWord: newSecretWord,
+      secretWordLetters: newSecretWord.split(''),
+      correctLetters: ['_', '_', '_', '_', '_', '_', '_'],
+      randomLetter: [
+        'a',
+        'b',
+        'c',
+        'd',
+        'e',
+        'f',
+        'g',
+        'h',
+        'i',
+        'j',
+        'k',
+        'l',
+        'm',
+        'n',
+        'o',
+        'p',
+        'q',
+        'r',
+        's',
+        't',
+        'u',
+        'v',
+        'w',
+        'x',
+        'y',
+        'z'
+      ]
+    })
   }
 
   generateRandomLetters = () => {
@@ -112,36 +137,6 @@ class App extends Component {
     // let random = alphabet.map(letter => {
     //   return alphabet[Math.floor(Math.random() * alphabet.length)]
     // })
-    this.setState({
-      randomLetter: [
-        'a',
-        'b',
-        'c',
-        'd',
-        'e',
-        'f',
-        'g',
-        'h',
-        'i',
-        'j',
-        'k',
-        'l',
-        'm',
-        'n',
-        'o',
-        'p',
-        'q',
-        'r',
-        's',
-        't',
-        'u',
-        'v',
-        'w',
-        'x',
-        'y',
-        'z'
-      ]
-    })
   }
 
   check = event => {
@@ -164,23 +159,65 @@ class App extends Component {
         1,
         event.target.value
       )
-      //
       // this gem right here was holding me back a while
       // replaces the letter with a empty string so my while loop will
       // check and add all the same letters
       this.state.secretWordLetters[matchedLetterIndex] = ''
-      console.log(this.state.secretWordLetters)
 
-      this.setState({
-        correctLetters: this.state.correctLetters
-      })
+      this.state.snowmanArray.push('')
+      this.setState(
+        {
+          correctLetters: this.state.correctLetters,
+          snowmanArray: this.state.snowmanArray
+        },
+        () => {
+          this.addNextImage()
+          console.log(this.state.secretWordLetters)
+          console.log(this.state.snowmanArray.length)
+        }
+      )
     }
-
     // to make this work right i need a for loop that takes the index +1
     // then goes back through the secret word up until the length of the
     // secret word array
   }
-
+  addNextImage = () => {
+    if (this.state.snowmanArray.length === 1) {
+      this.setState({
+        snowman: snowman_1
+      })
+    }
+    if (this.state.snowmanArray.length === 2) {
+      this.setState({
+        snowman: snowman_2
+      })
+    }
+    if (this.state.snowmanArray.length === 3) {
+      this.setState({
+        snowman: snowman_3
+      })
+    }
+    if (this.state.snowmanArray.length === 4) {
+      this.setState({
+        snowman: snowman_4
+      })
+    }
+    if (this.state.snowmanArray.length === 5) {
+      this.setState({
+        snowman: snowman_5
+      })
+    }
+    if (this.state.snowmanArray.length === 6) {
+      this.setState({
+        snowman: snowman_6
+      })
+    }
+    if (this.state.snowmanArray.length === 7) {
+      this.setState({
+        snowman: snowman_7
+      })
+    }
+  }
   won = () => {
     // once all letters have been filled declare a win
     // and suggest a play again
@@ -192,7 +229,7 @@ class App extends Component {
       <div className="App">
         <header>snowman!</header>
         <h4>Enjoy the game</h4>
-        <button className="newGame" onClick={this.generateRandomWord}>
+        <button className="newGame" onClick={this.newGame}>
           New Game
         </button>
         <br />
