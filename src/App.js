@@ -66,9 +66,13 @@ class App extends Component {
     // an array of letters
     //   - need to turn an string or object into an array
     //   - then slice each character
-    // display for now or console log
+
+    //generate random word
+    // let random = alphabet.map(letter => {
+    //   return alphabet[Math.floor(Math.random() * alphabet.length)]
     const newSecretWord = 'snowman'
     this.setState({
+      gameStatus: 'Enjoy the game',
       snowman: snowman_0,
       snowmanArray: [],
       secretWord: newSecretWord,
