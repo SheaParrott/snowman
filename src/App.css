@@ -36,28 +36,30 @@
 }
 h4 {
   margin: 1px;
-  font-size: 4vw;
+  font-size: 5vw;
+  color: white;
+  text-shadow: 0 0 5px rgb(0, 0, 0);
+}
+button.newGame {
+  font-size: 4.5vw;
+  margin: 1vw 1vw 3vw 1vw;
+  width: 30vw;
+  text-transform: uppercase;
 }
 .snowmanImage {
-  width: 45vw;
+  width: 70vw;
   border-radius: 15px;
   box-shadow: 0 0 1vw black;
 }
 header {
   font-size: 12vw;
-  text-shadow: 0 0 1px rgb(241, 8, 8);
+  text-shadow: 0 0 2px rgb(0, 0, 0);
   color: rgb(4, 127, 199);
 }
 .headerSnowflake {
   font-size: 9vw;
 }
-button.newGame {
-  font-size: 4vw;
-  margin: 0.7vw 0.7vw 2vw 0.7vw;
-  width: 25vw;
-  height: 7vw;
-  text-transform: uppercase;
-}
+
 .correctLetters {
   color: red;
   margin: 1.5vw;
@@ -72,9 +74,9 @@ p {
 }
 button {
   margin: 0.3vw;
-  width: 7vw;
-  height: 7vw;
-  font-size: 4.1vw;
+  width: 10.5vw;
+  height: 10.5vw;
+  font-size: 8vw;
   border-radius: 2vw;
   text-transform: uppercase;
   box-shadow: 0 0 1vw white;

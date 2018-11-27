@@ -176,7 +176,6 @@ class App extends Component {
         () => {
           this.addNextImage()
           console.log(this.state.secretWordLetters)
-          console.log(this.state.snowmanArray.length)
         }
       )
     }
