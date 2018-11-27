@@ -14,6 +14,7 @@ class App extends Component {
     super(props)
 
     this.state = {
+      gameStatus: 'Enjoy the game',
       snowman: snowman_0,
       snowmanArray: [],
       secretWord: '',
@@ -69,6 +70,7 @@ class App extends Component {
     const newSecretWord = 'snowman'
     this.setState({
       snowman: snowman_0,
+      snowmanArray: [],
       secretWord: newSecretWord,
       secretWordLetters: newSecretWord.split(''),
       correctLetters: ['_', '_', '_', '_', '_', '_', '_'],
@@ -168,7 +170,8 @@ class App extends Component {
       this.setState(
         {
           correctLetters: this.state.correctLetters,
-          snowmanArray: this.state.snowmanArray
+          snowmanArray: this.state.snowmanArray,
+          secretWordLetters: this.state.secretWordLetters
         },
         () => {
           this.addNextImage()
@@ -214,7 +217,8 @@ class App extends Component {
     }
     if (this.state.snowmanArray.length === 7) {
       this.setState({
-        snowman: snowman_7
+        snowman: snowman_7,
+        gameStatus: 'Coolin it, Great job! Play again?'
       })
     }
   }
@@ -227,8 +231,16 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header>snowman!</header>
-        <h4>Enjoy the game</h4>
+        <header>
+          <span className="headerSnowflake" role="img" aria-label="snowflake">
+            ❄️
+          </span>
+          snowman!
+          <span className="headerSnowflake" role="img" aria-label="snowflake">
+            ❄️
+          </span>
+        </header>
+        <h4>{this.state.gameStatus}</h4>
         <button className="newGame" onClick={this.newGame}>
           New Game
         </button>

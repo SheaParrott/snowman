@@ -1,6 +1,9 @@
 .App {
   text-align: center;
   text-transform: uppercase;
+  background-image: linear-gradient(rgb(0, 217, 255), rgb(255, 255, 255));
+  height: 100vh;
+  width: 100vw;
 }
 
 .App-logo {
@@ -33,17 +36,24 @@
 }
 h4 {
   margin: 1px;
-  font-size: 5vw;
+  font-size: 4vw;
 }
 .snowmanImage {
   width: 45vw;
+  border-radius: 15px;
+  box-shadow: 0 0 1vw black;
 }
 header {
-  font-size: 15vw;
+  font-size: 12vw;
+  text-shadow: 0 0 1px rgb(241, 8, 8);
+  color: rgb(4, 127, 199);
+}
+.headerSnowflake {
+  font-size: 9vw;
 }
 button.newGame {
   font-size: 4vw;
-  margin: 0.8vw;
+  margin: 0.7vw 0.7vw 2vw 0.7vw;
   width: 25vw;
   height: 7vw;
   text-transform: uppercase;
@@ -57,6 +67,9 @@ section {
   display: flex;
   justify-content: center;
 }
+p {
+  text-shadow: 0 0 1px black;
+}
 button {
   margin: 0.3vw;
   width: 7vw;
@@ -64,9 +77,10 @@ button {
   font-size: 4.1vw;
   border-radius: 2vw;
   text-transform: uppercase;
+  box-shadow: 0 0 1vw white;
 }
 button:hover {
-  box-shadow: 0 0 1vw red;
+  box-shadow: 0 0 3vw red;
 }
 
 span {
