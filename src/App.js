@@ -8,6 +8,7 @@ import snowman_4 from './assets/step_4.png'
 import snowman_5 from './assets/step_5.png'
 import snowman_6 from './assets/step_6.png'
 import snowman_7 from './assets/step_7.png'
+import wordList from './wordList.json'
 
 class App extends Component {
   constructor(props) {
@@ -70,13 +71,13 @@ class App extends Component {
     //generate random word
     // let random = alphabet.map(letter => {
     //   return alphabet[Math.floor(Math.random() * alphabet.length)]
-    const newSecretWord = 'snowman'
+    let randomIndex = Math.floor(Math.random() * 1024)
     this.setState({
       gameStatus: 'Enjoy the game',
       snowman: snowman_0,
       snowmanArray: [],
-      secretWord: newSecretWord,
-      secretWordLetters: newSecretWord.split(''),
+      secretWord: wordList[randomIndex],
+      secretWordLetters: this.state.secretWord.split(''),
       correctLetters: ['_', '_', '_', '_', '_', '_', '_'],
       randomLetter: [
         'a',
@@ -146,6 +147,10 @@ class App extends Component {
   }
 
   check = event => {
+    if (!this.state.secretWordLetters.includes(event.target.value)) {
+      this.addNextImage()
+      return
+    }
     // then onlclick needs to determine if that matches one
     // of the letters
     // use of some is probably needed
@@ -171,54 +176,54 @@ class App extends Component {
       this.state.secretWordLetters[matchedLetterIndex] = ''
 
       this.state.snowmanArray.push('')
-      this.setState(
-        {
-          correctLetters: this.state.correctLetters,
-          snowmanArray: this.state.snowmanArray,
-          secretWordLetters: this.state.secretWordLetters
-        },
-        () => {
-          this.addNextImage()
-          console.log(this.state.secretWordLetters)
-        }
-      )
+      this.setState({
+        correctLetters: this.state.correctLetters,
+        snowmanArray: this.state.snowmanArray,
+        secretWordLetters: this.state.secretWordLetters
+      })
     }
     // to make this work right i need a for loop that takes the index +1
     // then goes back through the secret word up until the length of the
     // secret word array
   }
   addNextImage = () => {
-    if (this.state.snowmanArray.length === 1) {
+    if (this.state.snowman === snowman_0) {
       this.setState({
         snowman: snowman_1
       })
+      return
     }
-    if (this.state.snowmanArray.length === 2) {
+    if (this.state.snowman === snowman_1) {
       this.setState({
         snowman: snowman_2
       })
+      return
     }
-    if (this.state.snowmanArray.length === 3) {
+    if (this.state.snowman === snowman_2) {
       this.setState({
         snowman: snowman_3
       })
+      return
     }
-    if (this.state.snowmanArray.length === 4) {
+    if (this.state.snowman === snowman_3) {
       this.setState({
         snowman: snowman_4
       })
+      return
     }
-    if (this.state.snowmanArray.length === 5) {
+    if (this.state.snowman === snowman_4) {
       this.setState({
         snowman: snowman_5
       })
+      return
     }
-    if (this.state.snowmanArray.length === 6) {
+    if (this.state.snowman === snowman_5) {
       this.setState({
         snowman: snowman_6
       })
+      return
     }
-    if (this.state.snowmanArray.length === 7) {
+    if (this.state.snowman === snowman_6) {
       this.setState({
         snowman: snowman_7,
         gameStatus: 'Coolin it, Great job! Play again?'
