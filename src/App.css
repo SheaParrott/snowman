@@ -88,3 +88,56 @@ button:hover {
 span {
   font-size: 5vw;
 }
+@media (min-width: 750px) {
+  header {
+    font-size: 10vw;
+  }
+  h4 {
+    margin: 1px;
+    font-size: 4vw;
+  }
+  button.newGame {
+    font-size: 3vw;
+    width: 20vw;
+  }
+  .snowmanImage {
+    width: 40vw;
+  }
+  .headerSnowflake {
+    font-size: 9vw;
+  }
+  .correctLetters {
+    font-size: 10vw;
+  }
+  button {
+    width: 7vw;
+    height: 7vw;
+    font-size: 5vw;
+  }
+}
+@media (min-width: 1200px) {
+  header {
+    font-size: 7vw;
+  }
+  h4 {
+    font-size: 2vw;
+  }
+  button.newGame {
+    font-size: 2vw;
+    width: 15vw;
+  }
+  .snowmanImage {
+    width: 20vw;
+  }
+  .headerSnowflake {
+    font-size: 6vw;
+  }
+  .correctLetters {
+    font-size: 3vw;
+  }
+  button {
+    width: 4vw;
+    height: 4vw;
+    font-size: 3vw;
+  }
+}
