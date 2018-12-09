@@ -1,5 +1,5 @@
  <strong>Summary</strong><br/>
-In this assignment we were instructed to fcreate a less grim version of Hangman aka Snowman.
+In this assignment we were instructed to create a less grim version of Hangman aka Snowman.
 
 <strong>Things learned</strong><br/>
 expanded and reinforced my knowledge into HTML, CSS, Javascript, and REACT<br/>
