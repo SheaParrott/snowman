@@ -12,4 +12,8 @@ CSS<br/>
 javascript<br/>
 REACT<br/>
 
+https://www.javascript.com/ <br/>
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/ <br/>
+https://reactjs.org/
+
 ![snowman](https://user-images.githubusercontent.com/44300521/49702051-44b8f780-fbc2-11e8-928b-7bafec5df38a.gif)
