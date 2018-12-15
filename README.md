@@ -2,9 +2,9 @@
 In this assignment we were instructed to create a less grim version of Hangman aka Snowman.
 
 <strong>Things learned</strong><br/>
-guard clause <br/>
 expanded and reinforced my knowledge into HTML, CSS, Javascript, and REACT<br/>
 expanding my mind for creating game logic<br/>
+guard clause <br/>
 manipulating the DOM<br/>
 
 <strong>Technologies Used</strong><br/>
